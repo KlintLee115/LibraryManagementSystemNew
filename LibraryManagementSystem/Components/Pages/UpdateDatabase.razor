@@ -19,8 +19,9 @@
             status = "Updated";
             StateHasChanged();
         }
-        catch (Exception)
+        catch (Exception ex)
         {
+            status = ex.Message;
             StateHasChanged();
         }
 
@@ -48,9 +49,9 @@
                 }
             }
         }
-        catch (Exception ex)
+        catch (Exception)
         {
-            status = ex.Message + "Games";
+            throw;
         }
     }
 
@@ -97,9 +98,9 @@
                 }
             }
         }
-        catch (Exception ex)
+        catch (Exception)
         {
-            status = ex.Message + "Books";
+            throw;
         }
     }
 
@@ -145,9 +146,9 @@
                     await command.ExecuteScalarAsync();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                status = ex.Message + "DVD";
+                throw;
             }
         }
     }
