@@ -34,36 +34,15 @@ namespace LibraryManagementSystem.DatabaseManager
         public static Game GetGame(int? id) => GetItem(id, Games);
         public static DVD GetDVD(int? id) => GetItem(id, Dvds);
 
-        public static ILibraryItem? GetItem(int id)
-        {
-            Game? game = Games.FirstOrDefault(item => item.Id == id);
-            if (game != null) return game;
-
-            Book? book = Books.FirstOrDefault(item => item.Id == id);
-            if (book != null) return book;
-
-            DVD? dvd = Dvds.FirstOrDefault(item => item.Id == id);
-            if (dvd != null) return dvd;
-
-            throw new ItemDoesntExistError("Item");
-
-        }
-
         public static double HandleReturn(int itemId, DateTime todayDate)
         {
             try
             {
-                ILibraryItem? item = GetItem(itemId);
-                if (item is Book book)
-                {
+                Book? book = Books.FirstOrDefault(item => item.Id == itemId);
+                if (book != null) return book.CalculateLateFees(todayDate);
 
-                    return book.CalculateLateFees(todayDate);
-
-                }
-                else if (item is DVD dvd)
-                {
-                    return dvd.CalculateLateFees(todayDate);
-                }
+                DVD? dvd = Dvds.FirstOrDefault(item => item.Id == itemId);
+                if (dvd != null) return dvd.CalculateLateFees(todayDate);
 
                 throw new ItemDoesntExistError("Item");
             }
