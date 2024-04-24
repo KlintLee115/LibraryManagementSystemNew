@@ -1,0 +1,208 @@
+﻿@page "/addPerson"
+@using LibraryManagementSystem.DatabaseManager;
+@using LibraryManagementSystem.Exceptions
+@using LibraryManagementSystem.Models.Users;
+@using LibraryManagementSystem.Models.Interfaces;
+@using LibraryManagementSystem.Models;
+@using LibraryManagementSystem.Models.Items;
+
+<div>
+    <div>
+        <label>Who are you? </label>
+        <select @bind="currUserId">
+            @foreach (IUser user in users)
+            {
+                <option value="@user.Id">@user.FirstName @user.LastName</option>
+            }
+        </select>
+    </div>
+
+    <button @onclick="HandleUserChange">Continue</button>
+
+    @if (displayUsers.Count > 0)
+    {
+        <h4>Users</h4>
+
+        <div style="display: flex; justify-content: space-evenly; align-content: center; margin-bottom:0">
+            <p style="border: 1px solid black; flex-grow: 1; text-align: center; flex-basis:0; margin-block:0">Id</p>
+            <p style="border: 1px solid black; flex-grow: 1; text-align: center; flex-basis:0; margin-block:0">First Name
+            </p>
+            <p style="border: 1px solid black; flex-grow: 1; text-align: center; flex-basis:0; margin-block:0">Last Name</p>
+            <p style="border: 1px solid black; flex-grow: 1; text-align: center; flex-basis:0; margin-block:0">User Type</p>
+            <p style="border: 1px solid black; flex-grow: 1; text-align: center; flex-basis:0; margin-block:0">Action</p>
+
+        </div>
+        @foreach (IUser user in displayUsers)
+        {
+            string userType = "";
+            if (user is Patron)
+            {
+                userType = "Patron";
+            }
+            else if (user is Owner)
+            {
+                userType = "Owner";
+            }
+            if (user is Librarian)
+            {
+                userType = "Librarian";
+            }
+            <div style="display: flex; justify-content: space-evenly; align-content: center; margin-top:0">
+                <p style="border: 1px solid black; flex-grow: 1; text-align: center; flex-basis:0; margin-block:0">@user.Id
+                </p>
+                <p style="border: 1px solid black; flex-grow: 1; text-align: center; flex-basis:0; margin-block:0">
+                    @user.FirstName</p>
+                <p style="border: 1px solid black; flex-grow: 1; text-align: center; flex-basis:0; margin-block:0">
+                    @user.LastName</p>
+                <p style="border: 1px solid black; flex-grow: 1; text-align: center; flex-basis:0; margin-block:0">
+                    @userType</p>
+                <p style="flex-grow: 1; text-align: center; flex-basis:0; margin-block:0"><button
+                        style="display: block; width: 100%; color: red" @onclick="() => RemoveUser(user.Id)">Remove</button></p>
+
+
+            </div>
+        }
+    }
+    @if (currUser != null && displayUsers.Count == 0)
+    {
+        <h6>Empty</h6>
+    }
+</div>
+
+
+@if (currUser != null)
+{
+    <div>
+        <h3>Add Patron</h3>
+        <div>
+            <label>First Name:</label>
+            <input type="text" @bind="firstName" />
+        </div>
+        <div>
+            <label>Last Name:</label>
+            <input type="text" @bind="lastName" />
+        </div>
+        <button @onclick="AddPatron">Add Patron</button>
+    </div>
+
+    @if (currUser is Owner)
+    {
+        <div>
+            <h3>Add Librarian</h3>
+            <div>
+                <label>First Name:</label>
+                <input type="text" @bind="firstName" />
+                <p style="font-size: 18px; color: red;"></p>
+            </div>
+            <div>
+                <label>Last Name:</label>
+                <input type="text" @bind="lastName" />
+            </div>
+            <button @onclick="AddLibrarian">Add Librarian</button>
+        </div>
+    }
+
+    <p style="color: red; font-size: 18px;">@err</p>
+}
+
+@code {
+    private int? currUserId;
+    private string? firstName;
+    private string? lastName;
+    private string? err;
+
+    IUser? currUser;
+    private List<IUser> users = UsersManagement.users;
+    private List<IUser> displayUsers = [];
+
+
+    // Handles when a different user is selected from the drop down menu.
+    private void HandleUserChange()
+    {
+        currUser = users.FirstOrDefault(u => u.Id == currUserId);
+
+        if (currUser is Librarian)
+        {
+            displayUsers = users.Where(u => u is Patron).ToList();
+        }
+
+        else if (currUser is Owner)
+        {
+            displayUsers = users.Where(u => u is Patron || u is Librarian).ToList();
+        }
+    }
+
+    // During initialisation, assign the first id from users list to currUserId.
+    protected override void OnInitialized()
+    {
+        currUserId = users.First().Id;
+    }
+
+    // Get the biggest userid from users list, add 1 to it, then add a new patron with the corresponding information
+    private void AddPatron()
+    {
+        try
+        {
+            if (string.IsNullOrEmpty(firstName)) throw new EmptyInputError("First name");
+            if (string.IsNullOrEmpty(lastName)) throw new EmptyInputError("Last name");
+
+            if (currUser is Admin)
+            {
+                int id = users.OrderByDescending(u => u.Id).First().Id + 1;
+                Patron patron = new Patron(id, firstName, lastName);
+
+                UsersManagement.AddUser(patron);
+            }
+        }
+        catch (Exception ex)
+        {
+            err = ex.Message;
+        }
+    }
+
+    private void AddLibrarian()
+    {
+        try
+        {
+            if (string.IsNullOrEmpty(firstName)) throw new EmptyInputError("First name");
+            if (string.IsNullOrEmpty(lastName)) throw new EmptyInputError("Last name");
+
+            if (currUser is Owner)
+            {
+
+                int id = users.OrderByDescending(u => u.Id).First().Id + 1;
+
+                Librarian librarian = new Librarian(id, firstName, lastName);
+
+                UsersManagement.AddUser(librarian);
+            }
+        }
+        catch (Exception ex)
+        {
+            err = ex.Message;
+        }
+    }
+
+    private void RemoveUser(int userid)
+    {
+        if (currUser is Admin)
+        {
+
+            IUser target = UsersManagement.GetUser(userid);
+
+            if (currUser is Owner)
+            {
+                UsersManagement.RemoveUser(target);
+            }
+            else
+            {
+                if (target is Patron patron)
+                {
+                    UsersManagement.RemoveUser(patron);
+                }
+            }
+        }
+    }
+
+
+}

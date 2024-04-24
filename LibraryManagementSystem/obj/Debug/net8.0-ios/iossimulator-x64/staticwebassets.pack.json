@@ -1,0 +1,45 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\obj\\Debug\\net8.0-ios\\iossimulator-x64\\scopedcss\\bundle\\LibraryManagementSystem.styles.css",
+      "PackagePath": "staticwebassets\\LibraryManagementSystem.styles.css"
+    },
+    {
+      "Id": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0-ios\\iossimulator-x64\\staticwebassets\\msbuild.LibraryManagementSystem.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0-ios\\iossimulator-x64\\staticwebassets\\msbuild.build.LibraryManagementSystem.props",
+      "PackagePath": "build\\LibraryManagementSystem.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0-ios\\iossimulator-x64\\staticwebassets\\msbuild.buildMultiTargeting.LibraryManagementSystem.props",
+      "PackagePath": "buildMultiTargeting\\LibraryManagementSystem.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0-ios\\iossimulator-x64\\staticwebassets\\msbuild.buildTransitive.LibraryManagementSystem.props",
+      "PackagePath": "buildTransitive\\LibraryManagementSystem.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,0 +1,154 @@
+﻿@page "/updateDatabase"
+@using LibraryManagementSystem.DatabaseManager
+@using LibraryManagementSystem.Models.Items
+@using Npgsql
+
+<h3>@status</h3>
+<button @onclick="Update">Update database</button>
+
+@code {
+    private string status = "Not updated";
+
+    private async Task Update()
+    {
+        try
+        {
+            await InsertBooks();
+            await InsertGames();
+            await InsertDVDs();
+            status = "Updated";
+            StateHasChanged();
+        }
+        catch (Exception)
+        {
+            StateHasChanged();
+        }
+
+    }
+
+    private async Task InsertGames()
+    {
+        try
+        {
+            foreach (Game game in LibraryItemsManager.Games)
+            {
+                string query = "INSERT INTO \"Items\" (borrowed) VALUES (false) RETURNING id;";
+                int insertedId = 0;
+
+                using (var command = new NpgsqlCommand(query, MauiProgram.connection))
+                {
+                    insertedId = (int)await command.ExecuteScalarAsync();
+
+                }
+
+                query = $"INSERT INTO \"Games\" (name, itemid) VALUES ('{game.Name}', {insertedId}) RETURNING id;";
+                using (var command = new NpgsqlCommand(query, MauiProgram.connection))
+                {
+                    insertedId = (int)await command.ExecuteScalarAsync();
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            status = ex.Message + "Games";
+        }
+    }
+
+    private async Task InsertBooks()
+    {
+        try
+        {
+
+            foreach (Book book in LibraryItemsManager.Books)
+            {
+                int insertedId = 0;
+                string query;
+
+                if (book.IsAvailable)
+                {
+                    query = "INSERT INTO \"Items\" (borrowed) VALUES (false) RETURNING id;";
+
+                    using (var command = new NpgsqlCommand(query, MauiProgram.connection))
+                    {
+
+                        insertedId = (int)await command.ExecuteScalarAsync();
+                    }
+                }
+                else
+                {
+                    query = "INSERT INTO \"Items\" (borrowed, borrowdate, userid, returndate) VALUES (true, @borrowdate, @userid, @returndate) RETURNING id;";
+
+                    using (var command = new NpgsqlCommand(query, MauiProgram.connection))
+                    {
+                        command.Parameters.AddWithValue("@borrowdate", book.BorrowDate);
+                        command.Parameters.AddWithValue("@userid", book.Borrower.Id);
+                        command.Parameters.AddWithValue("@returndate", book.ReturnDate);
+
+                        insertedId = (int)await command.ExecuteScalarAsync();
+
+                    }
+                }
+
+                query = $"INSERT INTO \"Books\" (itemid, title, author) VALUES ({insertedId}, '{book.Title}', '{book.Author}');";
+                using (var command = new NpgsqlCommand(query, MauiProgram.connection))
+                {
+
+                    await command.ExecuteScalarAsync();
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            status = ex.Message + "Books";
+        }
+    }
+
+    private async Task InsertDVDs()
+    {
+        foreach (DVD dvd in LibraryItemsManager.Dvds)
+        {
+            int insertedId = 0;
+            string query;
+
+            if (dvd.IsAvailable)
+            {
+                query = "INSERT INTO \"Items\" (borrowed) VALUES (false) RETURNING id;";
+
+                using (var command = new NpgsqlCommand(query, MauiProgram.connection))
+                {
+
+                    insertedId = (int)await command.ExecuteScalarAsync();
+                }
+            }
+            else
+            {
+                query = "INSERT INTO \"Items\" (borrowed, borrowdate, userid, returndate) VALUES (true, @borrowdate, @userid, @returndate) RETURNING id;";
+
+                using (var command = new NpgsqlCommand(query, MauiProgram.connection))
+                {
+                    command.Parameters.AddWithValue("@borrowdate", dvd.BorrowDate);
+                    command.Parameters.AddWithValue("@userid", dvd.Borrower.Id);
+                    command.Parameters.AddWithValue("@returndate", dvd.ReturnDate);
+
+                    insertedId = (int)await command.ExecuteScalarAsync();
+
+                }
+            }
+
+            try
+            {
+
+                query = $"INSERT INTO \"DvDs\" (title, director, itemid) VALUES ('{dvd.Title}', '{dvd.Director}', {insertedId});";
+                using (var command = new NpgsqlCommand(query, MauiProgram.connection))
+                {
+
+                    await command.ExecuteScalarAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                status = ex.Message + "DVD";
+            }
+        }
+    }
+}
