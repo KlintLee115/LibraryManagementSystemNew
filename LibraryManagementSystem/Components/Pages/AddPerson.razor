@@ -1,4 +1,4 @@
-﻿@page "/addPerson"
+@page "/addPerson"
 
 @using LibraryManagementSystem.DatabaseManager;
 @using LibraryManagementSystem.Exceptions
@@ -8,12 +8,15 @@
 @using LibraryManagementSystem.Models.Items;
 
 <div>
+    <!-- Displaying users for admin access -->
     @if (MauiProgram.currUser is Admin)
     {
+        <!-- Check if there are users to display -->
         @if (displayUsers.Count > 0)
         {
             <h4>Users</h4>
 
+            <!-- Display user information -->
             <div style="display: flex; justify-content: space-evenly; align-content: center; margin-bottom:0">
                 <p style="border: 1px solid black; flex-grow: 1; text-align: center; flex-basis:0; margin-block:0">Id</p>
                 <p style="border: 1px solid black; flex-grow: 1; text-align: center; flex-basis:0; margin-block:0">
@@ -24,6 +27,7 @@
                 <p style="border: 1px solid black; flex-grow: 1; text-align: center; flex-basis:0; margin-block:0">Action</p>
 
             </div>
+            <!-- Iterate over each user to display their details -->
             @foreach (User user in displayUsers)
             {
                 string userType = user switch
@@ -56,6 +60,7 @@
 
                 </div>
             }
+            <!-- Form to add a new patron -->
             <div style="margin-top: 40px;">
                 <h3>Add Patron</h3>
                 <div>
@@ -93,6 +98,7 @@
     }
 </div>
 
+<!-- Add Librarian section only accessible to Owner -->
 @if (MauiProgram.currUser is Owner)
 {
     <div style="margin-top: 40px;">
@@ -118,12 +124,13 @@
     private List<User> users = UsersManagement.users;
     private List<User> displayUsers = [];
 
+    // Method invoked when the component is initialized
     protected override void OnInitialized()
     {
         displayUsers = MauiProgram.currUser is Librarian ? users.Where(u => u is Patron).ToList() : users;
     }
 
-    // Get the biggest userid from users list, add 1 to it, then add a new patron with the corresponding information
+    // Add a new patron
     private void AddPatron()
     {
         try
@@ -154,6 +161,7 @@
         }
     }
 
+    // Add a new librarian
     private void AddLibrarian()
     {
         try
@@ -186,6 +194,7 @@
         }
     }
 
+    // Remove a user
     private void RemoveUser(User target)
     {
         if (target is Owner) return;
