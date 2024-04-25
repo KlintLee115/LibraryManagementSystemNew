@@ -1,0 +1,66 @@
+@page "/"
+@layout Components.Layout.NoMenuLayout
+@using LibraryManagementSystem.DatabaseManager
+@using LibraryManagementSystem.Models.Interfaces
+@using LibraryManagementSystem.Exceptions
+@using LibraryManagementSystem.Models.Users
+@using LibraryManagementSystem.Models;
+@using LibraryManagementSystem.Models.Items;
+@using Npgsql
+@using NpgsqlTypes
+
+<div style="position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); display: flex; flex-direction: column; gap: 20px;">
+
+    <div>
+        <h4>Email address</h4>
+        <input type="email" @bind="email" />
+        <p style="font-size: 18px; color: red;">@emailErr</p>
+    </div>
+
+    <div>
+        <h4>Password</h4>
+        <input type="password" @bind="password" />
+        <p style="font-size: 18px; color: red;">@pwdErr</p>
+
+    </div>
+    <button @onclick="LoginClicked" style="display: block">Login</button>
+
+</div>
+
+@code {
+
+    private string? email, password, emailErr, pwdErr;
+
+    [Inject]
+    private NavigationManager Navigation { get; set; }
+
+    private void LoginClicked()
+    {
+        try
+        {
+            if (string.IsNullOrEmpty(email)) throw new EmptyInputError("Email");
+            else emailErr = string.Empty;
+
+            if (string.IsNullOrEmpty(password)) throw new EmptyInputError("Password");
+            else pwdErr = string.Empty;
+
+            foreach (User user in UsersManagement.users)
+            {
+                if (user.Email == email && user.Password == password)
+                {
+                    MauiProgram.currUser = user;
+
+
+                    Navigation.NavigateTo("/itemsmgmt");
+                    break;
+                }
+            }
+
+        }
+        catch (Exception ex)
+        {
+            if (ex.Message.StartsWith("Email")) emailErr = ex.Message;
+            if (ex.Message.StartsWith("Password")) pwdErr = ex.Message;
+        }
+    }
+}

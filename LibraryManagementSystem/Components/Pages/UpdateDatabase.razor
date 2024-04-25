@@ -1,21 +1,33 @@
 ﻿@page "/updateDatabase"
 @using LibraryManagementSystem.DatabaseManager
 @using LibraryManagementSystem.Models.Items
+@using LibraryManagementSystem.Models.Users
 @using Npgsql
 
-<h3>@status</h3>
-<button @onclick="Update">Update database</button>
+@if (MauiProgram.currUser is Admin) {
+    <h3>@status</h3>
+    <button @onclick="Update">Update database</button>
+}
+else
+{
+    <h3 style="text-align: center;">Sorry, you don't have access to this page.</h3>
+}
 
 @code {
     private string status = "Not updated";
 
+/*
+* Delete all items in the tables, then add new data to update.
+*/
     private async Task Update()
     {
         try
         {
+            await DeleteAll();
             await InsertBooks();
             await InsertGames();
             await InsertDVDs();
+            await InsertUsers();
             status = "Updated";
             StateHasChanged();
         }
@@ -25,6 +37,43 @@
             StateHasChanged();
         }
 
+    }
+    
+    private async Task DeleteAll() {
+        string query = $"DELETE FROM \"Users\";";
+                using (var command = new NpgsqlCommand(query, MauiProgram.connection))
+                {
+
+                    await command.ExecuteScalarAsync();
+                }
+
+                query = $"DELETE FROM \"Games\";";
+                using (var command = new NpgsqlCommand(query, MauiProgram.connection))
+                {
+
+                    await command.ExecuteScalarAsync();
+                }
+
+                query = $"DELETE FROM \"DvDs\";";
+                using (var command = new NpgsqlCommand(query, MauiProgram.connection))
+                {
+
+                    await command.ExecuteScalarAsync();
+                }
+
+                query = $"DELETE FROM \"Books\";";
+                using (var command = new NpgsqlCommand(query, MauiProgram.connection))
+                {
+
+                    await command.ExecuteScalarAsync();
+                }
+
+                  query = $"DELETE FROM \"Items\";";
+                using (var command = new NpgsqlCommand(query, MauiProgram.connection))
+                {
+
+                    await command.ExecuteScalarAsync();
+                }
     }
 
     private async Task InsertGames()
@@ -39,7 +88,6 @@
                 using (var command = new NpgsqlCommand(query, MauiProgram.connection))
                 {
                     insertedId = (int)await command.ExecuteScalarAsync();
-
                 }
 
                 query = $"INSERT INTO \"Games\" (name, itemid) VALUES ('{game.Name}', {insertedId}) RETURNING id;";
@@ -140,6 +188,32 @@
             {
 
                 query = $"INSERT INTO \"DvDs\" (title, director, itemid) VALUES ('{dvd.Title}', '{dvd.Director}', {insertedId});";
+                using (var command = new NpgsqlCommand(query, MauiProgram.connection))
+                {
+
+                    await command.ExecuteScalarAsync();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        }
+
+         private async Task InsertUsers()
+    {
+        foreach (User user in UsersManagement.users)
+        {
+            try
+            {
+
+                int userType = 3;
+                
+                if (user is Owner) userType = 1;
+                else if (user is Librarian) userType = 2;
+
+                string query = $"INSERT INTO \"Users\" (firstname, lastname, usertype, email, password) VALUES ('{user.FirstName}', '{user.LastName}', {userType}, '{user.Email}', '{user.Password}');";
                 using (var command = new NpgsqlCommand(query, MauiProgram.connection))
                 {
 

@@ -1,8 +1,5 @@
 namespace LibraryManagementSystem.Exceptions
 {
-    public class ItemDoesntExistError(string fieldName) : Exception($"{fieldName} doesn't exist")
-    {
-    }
 
     public class EmptyInputError(string fieldName) : Exception($"{fieldName} can't be empty")
     {

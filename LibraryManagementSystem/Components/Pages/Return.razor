@@ -15,66 +15,90 @@
         <div>
             <label>Item id: </label>
             <input @bind="itemId" min="1" type="number" />
+
+            <p style="color: red; font-size: 18px;">@errItem</p>
+
             <button @onclick="ContinueFromItemIdInput">Continue</button>
 
             @if (!string.IsNullOrEmpty(rentalInfo))
             {
                 <p style="font-size: 20px;">@rentalInfo.ToString()</p>
 
+                <h4 style="margin-top: 20px;">Return date</h4>
                 <input type="date" @bind="todayDate" />
+                <p style="color: red; font-size: 18px;">@errDate</p>
 
                 @if (todayDate.HasValue)
                 {
 
                     <button style="width: fit-content" @onclick="ReturnItem">Return</button>
                     <p style="font-size: 20px;">Penalty: $ @penalty</p>
+                    <p style="font-size: 18px; color: green;">@successStatus</p>
+
                 }
+            }
+            else
+            {
+                <p style="color: red; font-size: 18px;">@noItemStatus</p>
             }
 
         </div>
     </div>
-    <p style="color: red; font-size: 18px;">@err</p>
 
 </div>
 
 @code {
     private int? itemId;
-    private string? rentalInfo = "";
-    private string? err;
+    private string? rentalInfo, errItem, errDate, noItemStatus, successStatus;
     private static ILibraryItem? item;
     private double? penalty;
     private DateTime? todayDate;
-
     private void ContinueFromItemIdInput()
     {
         try
         {
             if (!itemId.HasValue) throw new EmptyInputError("Item ID");
-            if (!todayDate.HasValue) throw new EmptyInputError("Date");
-           
-            ILibraryItem? item = LibraryItemsManager.GetItem(itemId.Value);
 
-            if (item is IBorrowable libItem)
+            item = LibraryItemsManager.GetItem(itemId.Value);
+
+            if (!(item is IBorrowable libItem))
             {
-                if (!libItem.IsAvailable)
-                    {
-                        if (item is Book book) rentalInfo = $"{book.Borrower!.FirstName} {book.Borrower.LastName} borrowed {book.Title}";
-                        else if (item is DVD dvd) rentalInfo = $"{dvd.Borrower!.FirstName} {dvd.Borrower.LastName} borrowed {dvd.Title} at {dvd.BorrowDate.Value.ToShortDateString()}. Due at {dvd.ReturnDate.Value.ToShortDateString()}";
-                    }
-                    else
-                    {
-                        err = "Item is not borrowed";
-                    }
-                }
+                noItemStatus = "Item is not borrowable";
+                return;
+            }
+            if (libItem.IsAvailable) {
+                noItemStatus = "Item is not borrowed";
+                return;
+            }
+
+            rentalInfo = $"{libItem.Borrower!.FirstName} {libItem.Borrower.LastName}";
+
+            if (item is Book book) rentalInfo += $"borrowed {book.Title}"; 
+            else if (item is DVD dvd) rentalInfo += $"borrowed {dvd.Title}";
+
+            rentalInfo += $"at {libItem.BorrowDate!.Value.ToShortDateString()}. Due at {libItem.ReturnDate!.Value.ToShortDateString()}";
         }
         catch (Exception ex)
         {
-            err = ex.Message;
+            string msg = ex.Message;
+            if (msg.StartsWith("Item")) errItem = msg;
         }
     }
 
     private void ReturnItem()
     {
-        penalty = LibraryItemsManager.HandleReturn(itemId.Value, todayDate.Value);
+        try
+        {
+            if (!todayDate.HasValue) throw new EmptyInputError("Date");
+
+            penalty = LibraryItemsManager.HandleReturn((IBorrowable)item!, todayDate!.Value);
+            successStatus = "Checkout is done!";
+
+        }
+        catch (Exception ex)
+        {
+            string msg = ex.Message;
+            if (msg.StartsWith("Date")) errDate = msg;
+        }
     }
 }

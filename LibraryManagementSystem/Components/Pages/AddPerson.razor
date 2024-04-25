@@ -1,4 +1,5 @@
 ﻿@page "/addPerson"
+
 @using LibraryManagementSystem.DatabaseManager;
 @using LibraryManagementSystem.Exceptions
 @using LibraryManagementSystem.Models.Users;
@@ -7,135 +8,119 @@
 @using LibraryManagementSystem.Models.Items;
 
 <div>
-    <div>
-        <label>Who are you? </label>
-        <select @bind="currUserId">
-            @foreach (IUser user in users)
-            {
-                <option value="@user.Id">@user.FirstName @user.LastName</option>
-            }
-        </select>
-    </div>
-
-    <button @onclick="HandleUserChange">Continue</button>
-
-    @if (displayUsers.Count > 0)
+    @if (MauiProgram.currUser is Admin)
     {
-        <h4>Users</h4>
-
-        <div style="display: flex; justify-content: space-evenly; align-content: center; margin-bottom:0">
-            <p style="border: 1px solid black; flex-grow: 1; text-align: center; flex-basis:0; margin-block:0">Id</p>
-            <p style="border: 1px solid black; flex-grow: 1; text-align: center; flex-basis:0; margin-block:0">First Name
-            </p>
-            <p style="border: 1px solid black; flex-grow: 1; text-align: center; flex-basis:0; margin-block:0">Last Name</p>
-            <p style="border: 1px solid black; flex-grow: 1; text-align: center; flex-basis:0; margin-block:0">User Type</p>
-            <p style="border: 1px solid black; flex-grow: 1; text-align: center; flex-basis:0; margin-block:0">Action</p>
-
-        </div>
-        @foreach (IUser user in displayUsers)
+        @if (displayUsers.Count > 0)
         {
-            string userType = "";
-            if (user is Patron)
-            {
-                userType = "Patron";
-            }
-            else if (user is Owner)
-            {
-                userType = "Owner";
-            }
-            if (user is Librarian)
-            {
-                userType = "Librarian";
-            }
-            <div style="display: flex; justify-content: space-evenly; align-content: center; margin-top:0">
-                <p style="border: 1px solid black; flex-grow: 1; text-align: center; flex-basis:0; margin-block:0">@user.Id
-                </p>
-                <p style="border: 1px solid black; flex-grow: 1; text-align: center; flex-basis:0; margin-block:0">
-                    @user.FirstName</p>
-                <p style="border: 1px solid black; flex-grow: 1; text-align: center; flex-basis:0; margin-block:0">
-                    @user.LastName</p>
-                <p style="border: 1px solid black; flex-grow: 1; text-align: center; flex-basis:0; margin-block:0">
-                    @userType</p>
-                <p style="flex-grow: 1; text-align: center; flex-basis:0; margin-block:0"><button
-                        style="display: block; width: 100%; color: red" @onclick="() => RemoveUser(user.Id)">Remove</button></p>
+            <h4>Users</h4>
 
+            <div style="display: flex; justify-content: space-evenly; align-content: center; margin-bottom:0">
+                <p style="border: 1px solid black; flex-grow: 1; text-align: center; flex-basis:0; margin-block:0">Id</p>
+                <p style="border: 1px solid black; flex-grow: 1; text-align: center; flex-basis:0; margin-block:0">
+                    First Name
+                </p>
+                <p style="border: 1px solid black; flex-grow: 1; text-align: center; flex-basis:0; margin-block:0">Last Name</p>
+                <p style="border: 1px solid black; flex-grow: 1; text-align: center; flex-basis:0; margin-block:0">User Type</p>
+                <p style="border: 1px solid black; flex-grow: 1; text-align: center; flex-basis:0; margin-block:0">Action</p>
 
             </div>
+            @foreach (User user in displayUsers)
+            {
+                string userType = user switch
+                {
+                    Patron => "Patron",
+                    Owner => "Owner",
+                    Librarian => "Librarian",
+                    _ => ""
+                };
+
+                <div style="display: flex; justify-content: space-evenly; align-content: center; margin-top:0">
+                    <p style="border: 1px solid black; flex-grow: 1; text-align: center; flex-basis:0; margin-block:0">
+                        @user.Id
+                    </p>
+                    <p style="border: 1px solid black; flex-grow: 1; text-align: center; flex-basis:0; margin-block:0">
+                        @user.FirstName
+                    </p>
+                    <p style="border: 1px solid black; flex-grow: 1; text-align: center; flex-basis:0; margin-block:0">
+                        @user.LastName
+                    </p>
+                    <p style="border: 1px solid black; flex-grow: 1; text-align: center; flex-basis:0; margin-block:0">
+                        @userType
+                    </p>
+                    <p style="flex-grow: 1; text-align: center; flex-basis:0; margin-block:0">
+                        <button style="display: block; width: 100%; color: red" @onclick="() => RemoveUser(user)">
+                            Remove
+                        </button>
+                    </p>
+
+
+                </div>
+            }
+            <div style="margin-top: 40px;">
+                <h3>Add Patron</h3>
+                <div>
+                    <label>First Name:</label>
+                    <input type="text" @bind="firstNamePatron" />
+                    <p style="font-size: 18px; color: red;">@errFirstName</p>
+                </div>
+                <div>
+                    <label>Last Name:</label>
+                    <input type="text" @bind="lastNamePatron" />
+                    <p style="font-size: 18px; color: red;">@errLastName</p>
+                </div>
+                <div>
+                    <label>Email:</label>
+                    <input type="email" @bind="email" />
+                    <p style="font-size: 18px; color: red;">@errEmail</p>
+                </div>
+                <div>
+                    <label>Password:</label>
+                    <input type="password" @bind="pwd" />
+                    <p style="font-size: 18px; color: red;">@errPwd</p>
+                </div>
+                <button @onclick="AddPatron">Add Patron</button>
+            </div>
+        }
+        else
+        {
+            <h6>Empty</h6>
         }
     }
-    @if (currUser != null && displayUsers.Count == 0)
+
+    else
     {
-        <h6>Empty</h6>
+        <h3 style="text-align: center;">Sorry, you don't have access to this page.</h3>
     }
 </div>
 
-
-@if (currUser != null)
+@if (MauiProgram.currUser is Owner)
 {
-    <div>
-        <h3>Add Patron</h3>
+    <div style="margin-top: 40px;">
+        <h3>Add Librarian</h3>
         <div>
             <label>First Name:</label>
-            <input type="text" @bind="firstName" />
+            <input type="text" @bind="firstNameLibrarian" />
+            <p style="font-size: 18px; color: red;">@errFirstName</p>
         </div>
         <div>
             <label>Last Name:</label>
-            <input type="text" @bind="lastName" />
+            <input type="text" @bind="lastNameLibrarian" />
+            <p style="font-size: 18px; color: red;">@errLastName</p>
         </div>
-        <button @onclick="AddPatron">Add Patron</button>
+        <button @onclick="AddLibrarian">Add Librarian</button>
     </div>
-
-    @if (currUser is Owner)
-    {
-        <div>
-            <h3>Add Librarian</h3>
-            <div>
-                <label>First Name:</label>
-                <input type="text" @bind="firstName" />
-                <p style="font-size: 18px; color: red;"></p>
-            </div>
-            <div>
-                <label>Last Name:</label>
-                <input type="text" @bind="lastName" />
-            </div>
-            <button @onclick="AddLibrarian">Add Librarian</button>
-        </div>
-    }
-
-    <p style="color: red; font-size: 18px;">@err</p>
 }
 
 @code {
-    private int? currUserId;
-    private string? firstName;
-    private string? lastName;
-    private string? err;
+    private string? firstNameLibrarian, lastNameLibrarian, lastNamePatron, firstNamePatron, email, pwd;
+    private string? errFirstName, errLastName, errEmail, errPwd;
 
-    IUser? currUser;
-    private List<IUser> users = UsersManagement.users;
-    private List<IUser> displayUsers = [];
+    private List<User> users = UsersManagement.users;
+    private List<User> displayUsers = [];
 
-
-    // Handles when a different user is selected from the drop down menu.
-    private void HandleUserChange()
-    {
-        currUser = users.FirstOrDefault(u => u.Id == currUserId);
-
-        if (currUser is Librarian)
-        {
-            displayUsers = users.Where(u => u is Patron).ToList();
-        }
-
-        else if (currUser is Owner)
-        {
-            displayUsers = users.Where(u => u is Patron || u is Librarian).ToList();
-        }
-    }
-
-    // During initialisation, assign the first id from users list to currUserId.
     protected override void OnInitialized()
     {
-        currUserId = users.First().Id;
+        displayUsers = MauiProgram.currUser is Librarian ? users.Where(u => u is Patron).ToList() : users;
     }
 
     // Get the biggest userid from users list, add 1 to it, then add a new patron with the corresponding information
@@ -143,20 +128,29 @@
     {
         try
         {
-            if (string.IsNullOrEmpty(firstName)) throw new EmptyInputError("First name");
-            if (string.IsNullOrEmpty(lastName)) throw new EmptyInputError("Last name");
+            errFirstName = string.Empty;
+            errLastName = string.Empty;
+            errEmail = string.Empty;
+            errPwd = string.Empty;
 
-            if (currUser is Admin)
-            {
-                int id = users.OrderByDescending(u => u.Id).First().Id + 1;
-                Patron patron = new Patron(id, firstName, lastName);
+            if (string.IsNullOrEmpty(firstNamePatron)) throw new EmptyInputError("First name");
+            if (string.IsNullOrEmpty(lastNamePatron)) throw new EmptyInputError("Last name");
+            if (string.IsNullOrEmpty(email)) throw new EmptyInputError("Email");
+            if (string.IsNullOrEmpty(pwd)) throw new EmptyInputError("Password"); int id = users.OrderByDescending(u =>
+            u.Id).First().Id + 1;
+            Patron patron = new Patron(id, firstNamePatron!, lastNamePatron!, email!, pwd!);
 
-                UsersManagement.AddUser(patron);
-            }
+            UsersManagement.AddUser(patron);
+
         }
         catch (Exception ex)
         {
-            err = ex.Message;
+            string msg = ex.Message;
+            if (msg.StartsWith("First")) errFirstName = msg;
+            if (msg.StartsWith("Last")) errLastName = msg;
+            if (msg.StartsWith("Email")) errEmail = msg;
+            if (msg.StartsWith("Password")) errPwd = msg;
+
         }
     }
 
@@ -164,45 +158,44 @@
     {
         try
         {
-            if (string.IsNullOrEmpty(firstName)) throw new EmptyInputError("First name");
-            if (string.IsNullOrEmpty(lastName)) throw new EmptyInputError("Last name");
+            errFirstName = string.Empty;
+            errLastName = string.Empty;
+            errEmail = string.Empty;
+            errPwd = string.Empty;
 
-            if (currUser is Owner)
+            if (string.IsNullOrEmpty(firstNameLibrarian)) throw new EmptyInputError("First name");
+            if (string.IsNullOrEmpty(lastNameLibrarian)) throw new EmptyInputError("Last name");
+            if (string.IsNullOrEmpty(email)) throw new EmptyInputError("Email");
+            if (string.IsNullOrEmpty(pwd)) throw new EmptyInputError("Password"); if (MauiProgram.currUser is Owner)
             {
 
                 int id = users.OrderByDescending(u => u.Id).First().Id + 1;
 
-                Librarian librarian = new Librarian(id, firstName, lastName);
+                Librarian librarian = new Librarian(id, firstNameLibrarian!, lastNameLibrarian!, email!, pwd!);
 
                 UsersManagement.AddUser(librarian);
             }
         }
         catch (Exception ex)
         {
-            err = ex.Message;
+            string msg = ex.Message;
+            if (msg.StartsWith("First")) errFirstName = msg;
+            if (msg.StartsWith("Last")) errLastName = msg;
+            if (msg.StartsWith("Email")) errEmail = msg;
+            if (msg.StartsWith("Password")) errPwd = msg;
         }
     }
 
-    private void RemoveUser(int userid)
+    private void RemoveUser(User target)
     {
-        if (currUser is Admin)
+        if (target is Owner) return;
+
+        if (MauiProgram.currUser is Owner)
         {
-
-            IUser target = UsersManagement.GetUser(userid);
-
-            if (currUser is Owner)
-            {
-                UsersManagement.RemoveUser(target);
-            }
-            else
-            {
-                if (target is Patron patron)
-                {
-                    UsersManagement.RemoveUser(patron);
-                }
-            }
+            UsersManagement.RemoveUser(target);
+            return;
         }
+
+        if (target is Patron patron) UsersManagement.RemoveUser(patron);
     }
-
-
 }

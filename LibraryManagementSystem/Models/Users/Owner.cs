@@ -2,7 +2,7 @@
 
 namespace LibraryManagementSystem.Models.Users
 {
-    public class Owner(int id, string FirstName, string LastName) : Admin(id, FirstName, LastName)
+    public class Owner(int id, string FirstName, string LastName, string email, string pasword) : Admin(id, FirstName, LastName, email, pasword)
     {
         public override string ToString()
         {

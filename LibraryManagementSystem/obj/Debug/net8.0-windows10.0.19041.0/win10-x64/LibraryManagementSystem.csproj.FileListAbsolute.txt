@@ -202,6 +202,7 @@ D:\oop2\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\net8.0-windows
 D:\oop2\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 D:\oop2\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
 D:\oop2\LibraryManagementSystem\LibraryManagementSystem\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Npgsql.dll
+D:\oop2\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\LibraryManagementSystem.sourcelink.json
 D:\oop2\LibraryManagementSystem\LibraryManagementSystem\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AboutAssets.txt
 D:\oop2\LibraryManagementSystem\LibraryManagementSystem\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\wwwroot\LibraryManagementSystem.styles.css
 D:\oop2\LibraryManagementSystem\LibraryManagementSystem\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\wwwroot\LibraryManagementSystem.bundle.scp.css

@@ -4,18 +4,13 @@ using LibraryManagementSystem.Models.Items;
 
 namespace LibraryManagementSystem.Models.Users
 {
-    public class Patron(int id, string firstName, string lastName) : IUser
+    public class Patron(int id, string firstName, string lastName, string email, string password) : User(id, firstName, lastName, email, password)
     {
-        public int Id => id;
-
-        public string FirstName => firstName;
-
-        public string LastName => lastName;
-
-        public void HandleBorrow<T>(T item) where T : IBorrowable
+        public override void HandleBorrow<T>(T item)
         {
             item.Borrower = this;
             item.BorrowDate = DateTime.Now;
+            item.IsAvailable = false;
 
             if (item is Book) item.ReturnDate = DateTime.Now.AddDays(7);
             else if (item is DVD) item.ReturnDate = DateTime.Now.AddDays(14);

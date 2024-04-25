@@ -1,4 +1,5 @@
 ﻿using LibraryManagementSystem.Models.Interfaces;
+using LibraryManagementSystem.Models.Users;
 
 namespace LibraryManagementSystem.Models.Items
 {
@@ -10,7 +11,7 @@ namespace LibraryManagementSystem.Models.Items
         public string Director { get; } = director;
         public DateTime? BorrowDate { get; set; }
         public DateTime? ReturnDate { get; set; }
-        public IUser? Borrower { get; set; }
+        public User? Borrower { get; set; }
         public bool IsAvailable { get; set; }
 
         public override string ToString()

@@ -2,82 +2,54 @@
 @using LibraryManagementSystem.DatabaseManager
 @using LibraryManagementSystem.Exceptions
 @using LibraryManagementSystem.Models.Interfaces
+@using LibraryManagementSystem.Models.Items
 @using LibraryManagementSystem.Models.Users
-@using LibraryManagementSystem.Models;
-@using LibraryManagementSystem.Models.Items;
 
 <div>
     <h2>Checkout</h2>
 
     <div style="display: flex; flex-direction: column; gap: 10px;">
         <div>
-            <label>User id: </label>
-            <input @bind="userId" />
-            <button @onclick="ContinueFromUserIdInput">Continue</button>
-            @if (user != null)
-            {
-                <h3>@user.ToString()</h3>
-            }
-        </div>
+            <label>Item id: </label>
+            <input @bind="itemId" />
 
-
-        @if (user != null)
-        {
-            <div>
-                <label>Item id: </label>
-                <input @bind="itemId" />
-                <button @onclick="ContinueFromItemIdInput">Continue</button>
-
-                @if (item != null)
-                {
-                    <h3>@item.ToString()</h3>
-                }
-
-            </div>
+            <p style="font-size: 18px; color: red;">@err</p>
+            <button @onclick="ContinueFromItemIdInput">Continue</button>
 
             @if (item != null)
             {
+                <h3>@item.ToString()</h3>
+
                 <button style="width: fit-content" @onclick="CheckOut">Checkout</button>
+                <p style="font-size: 18px; color: green;">@successStatus</p>
+
             }
-        }
+            else
+            {
+                <p style="font-size: 18px; color: red;">@noItemStatus</p>
+            }
+
+        </div>
     </div>
-    <p style="color: red; font-size: 18px;">@err</p>
 </div>
 
 @code {
 
-    private int? userId;
     private int? itemId;
-    private IUser? user;
     private static IBorrowable? item;
-    private string? err;
+    private string? err, noItemStatus, successStatus;
 
 
     private void CheckOut()
     {
         try
         {
-            user.HandleBorrow(item);
+            MauiProgram.currUser!.HandleBorrow(item!);
+            successStatus = "Checkout is done!";
         }
         catch (Exception ex)
         {
             err = ex.Message;
-        }
-    }
-
-    // Action after user clicks 'Continue' after entering userid
-
-    private void ContinueFromUserIdInput()
-    {
-        try
-        {
-            if (!userId.HasValue) throw new EmptyInputError("User id");
-            user = UsersManagement.GetUser(userId.Value);
-        }
-        catch (Exception ex)
-        {
-            err = ex.Message;
-
         }
     }
 
@@ -88,12 +60,13 @@
         {
             if (!itemId.HasValue) throw new EmptyInputError("Item id");
 
-            ILibraryItem? item = LibraryItemsManager.GetItem(itemId.Value);
+            Book? book = LibraryItemsManager.GetBook(itemId.Value);
+            DVD? dvd = LibraryItemsManager.GetDVD(itemId.Value);
 
-            if (item is IBorrowable localItem)
-            {
-                user.HandleBorrow(localItem);
-            }
+            if (book != null) item = book;
+            else if (dvd != null) item = dvd;
+            else noItemStatus = "No item found";
+
         }
         catch (Exception ex)
         {

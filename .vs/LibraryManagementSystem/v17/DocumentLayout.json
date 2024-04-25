@@ -3,43 +3,11 @@
   "WorkspaceRootPath": "D:\\oop2\\LibraryManagementSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|D:\\oop2\\LibraryManagementSystem\\librarymanagementsystem\\databasemanager\\libraryitemsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\databasemanager\\libraryitemsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|D:\\oop2\\LibraryManagementSystem\\librarymanagementsystem\\models\\items\\games.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\models\\items\\games.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|D:\\oop2\\LibraryManagementSystem\\librarymanagementsystem\\models\\interfaces\\ilibraryitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\models\\interfaces\\ilibraryitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|d:\\oop2\\librarymanagementsystem\\librarymanagementsystem\\components\\pages\\updatedatabase.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\components\\pages\\updatedatabase.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|D:\\oop2\\LibraryManagementSystem\\librarymanagementsystem\\components\\pages\\return.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\components\\pages\\return.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|D:\\oop2\\LibraryManagementSystem\\librarymanagementsystem\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|D:\\oop2\\LibraryManagementSystem\\librarymanagementsystem\\components\\pages\\checkout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\components\\pages\\checkout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|D:\\oop2\\LibraryManagementSystem\\librarymanagementsystem\\models\\items\\dvd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\models\\items\\dvd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|D:\\oop2\\LibraryManagementSystem\\librarymanagementsystem\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|D:\\oop2\\LibraryManagementSystem\\librarymanagementsystem\\components\\pages\\addperson.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|d:\\oop2\\librarymanagementsystem\\librarymanagementsystem\\components\\pages\\addperson.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\components\\pages\\addperson.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
@@ -47,24 +15,64 @@
       "RelativeMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\databasemanager\\usersmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|D:\\oop2\\LibraryManagementSystem\\librarymanagementsystem\\models\\users\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\models\\users\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|D:\\oop2\\LibraryManagementSystem\\librarymanagementsystem\\components\\pages\\itemsmanagement.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\components\\pages\\itemsmanagement.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|D:\\oop2\\LibraryManagementSystem\\librarymanagementsystem\\models\\users\\librarian.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\models\\users\\librarian.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|D:\\oop2\\LibraryManagementSystem\\librarymanagementsystem\\components\\pages\\checkout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\components\\pages\\checkout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|D:\\oop2\\LibraryManagementSystem\\librarymanagementsystem\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|D:\\oop2\\LibraryManagementSystem\\librarymanagementsystem\\models\\interfaces\\ilibraryitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\models\\interfaces\\ilibraryitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|D:\\oop2\\LibraryManagementSystem\\librarymanagementsystem\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|D:\\oop2\\LibraryManagementSystem\\librarymanagementsystem\\databasemanager\\libraryitemsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\databasemanager\\libraryitemsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|D:\\oop2\\LibraryManagementSystem\\librarymanagementsystem\\components\\pages\\updatedatabase.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\components\\pages\\updatedatabase.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|D:\\oop2\\LibraryManagementSystem\\librarymanagementsystem\\models\\users\\owner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\models\\users\\owner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|D:\\oop2\\LibraryManagementSystem\\librarymanagementsystem\\models\\interfaces\\iuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\models\\interfaces\\iuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|D:\\oop2\\LibraryManagementSystem\\librarymanagementsystem\\exceptions\\exceptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\exceptions\\exceptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|D:\\oop2\\LibraryManagementSystem\\librarymanagementsystem\\models\\items\\games.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\models\\items\\games.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|D:\\oop2\\LibraryManagementSystem\\librarymanagementsystem\\models\\users\\librarian.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\models\\users\\librarian.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|D:\\oop2\\LibraryManagementSystem\\librarymanagementsystem\\models\\users\\patron.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\models\\users\\patron.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|D:\\oop2\\LibraryManagementSystem\\librarymanagementsystem\\models\\items\\dvd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\models\\items\\dvd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|D:\\oop2\\LibraryManagementSystem\\librarymanagementsystem\\models\\items\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\models\\items\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|D:\\oop2\\LibraryManagementSystem\\librarymanagementsystem\\models\\users\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\models\\users\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C2CA6AFD-3109-4BE7-97F9-F1325DBA3ED2}|LibraryManagementSystem\\LibraryManagementSystem.csproj|D:\\oop2\\LibraryManagementSystem\\librarymanagementsystem\\models\\interfaces\\iborrowable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -78,49 +86,87 @@
       "DocumentGroups": [
         {
           "DockedWidth": 258,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UpdateDatabase.razor",
-              "DocumentMoniker": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Components\\Pages\\UpdateDatabase.razor",
-              "RelativeDocumentMoniker": "LibraryManagementSystem\\Components\\Pages\\UpdateDatabase.razor",
-              "ToolTip": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Components\\Pages\\UpdateDatabase.razor",
-              "RelativeToolTip": "LibraryManagementSystem\\Components\\Pages\\UpdateDatabase.razor",
-              "ViewState": "AQIAAGwAAAAAAAAAAAAqwJoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-22T19:48:31.438Z",
-              "EditorCaption": ""
+              "DocumentIndex": 11,
+              "Title": "Exceptions.cs",
+              "DocumentMoniker": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Exceptions\\Exceptions.cs",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\Exceptions\\Exceptions.cs",
+              "ToolTip": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Exceptions\\Exceptions.cs",
+              "RelativeToolTip": "LibraryManagementSystem\\Exceptions\\Exceptions.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-24T23:08:53.068Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Return.razor",
-              "DocumentMoniker": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Components\\Pages\\Return.razor",
-              "RelativeDocumentMoniker": "LibraryManagementSystem\\Components\\Pages\\Return.razor",
-              "ToolTip": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Components\\Pages\\Return.razor",
-              "RelativeToolTip": "LibraryManagementSystem\\Components\\Pages\\Return.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFgAAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-22T19:36:12.264Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 8,
               "Title": "LibraryItemsManager.cs",
               "DocumentMoniker": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\DatabaseManager\\LibraryItemsManager.cs",
               "RelativeDocumentMoniker": "LibraryManagementSystem\\DatabaseManager\\LibraryItemsManager.cs",
               "ToolTip": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\DatabaseManager\\LibraryItemsManager.cs",
               "RelativeToolTip": "LibraryManagementSystem\\DatabaseManager\\LibraryItemsManager.cs",
-              "ViewState": "AQIAAJcAAAAAAAAAAAAiwKMAAABEAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACMAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-22T19:15:23.253Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Components\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\Components\\Layout\\NavMenu.razor",
+              "ToolTip": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Components\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "LibraryManagementSystem\\Components\\Layout\\NavMenu.razor",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAiwBgAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-24T21:27:57.58Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Patron.cs",
+              "DocumentMoniker": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Models\\Users\\Patron.cs",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\Models\\Users\\Patron.cs",
+              "ToolTip": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Models\\Users\\Patron.cs",
+              "RelativeToolTip": "LibraryManagementSystem\\Models\\Users\\Patron.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAYAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-24T20:57:41.173Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UpdateDatabase.razor",
+              "DocumentMoniker": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Components\\Pages\\UpdateDatabase.razor",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\Components\\Pages\\UpdateDatabase.razor",
+              "ToolTip": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Components\\Pages\\UpdateDatabase.razor",
+              "RelativeToolTip": "LibraryManagementSystem\\Components\\Pages\\UpdateDatabase.razor",
+              "ViewState": "AQIAAHgAAAAAAAAAAAAqwHkAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-22T19:48:31.438Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Return.razor",
+              "DocumentMoniker": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Components\\Pages\\Return.razor",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\Components\\Pages\\Return.razor",
+              "ToolTip": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Components\\Pages\\Return.razor",
+              "RelativeToolTip": "LibraryManagementSystem\\Components\\Pages\\Return.razor",
+              "ViewState": "AQIAADAAAAAAAAAAAAAAAEIAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-22T19:36:12.264Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "Games.cs",
               "DocumentMoniker": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Models\\Items\\Games.cs",
               "RelativeDocumentMoniker": "LibraryManagementSystem\\Models\\Items\\Games.cs",
@@ -128,12 +174,11 @@
               "RelativeToolTip": "LibraryManagementSystem\\Models\\Items\\Games.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T18:45:19.182Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-22T18:45:19.182Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "ILibraryItem.cs",
               "DocumentMoniker": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Models\\Interfaces\\ILibraryItem.cs",
               "RelativeDocumentMoniker": "LibraryManagementSystem\\Models\\Interfaces\\ILibraryItem.cs",
@@ -146,75 +191,64 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 15,
               "Title": "DVD.cs",
               "DocumentMoniker": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Models\\Items\\DVD.cs",
               "RelativeDocumentMoniker": "LibraryManagementSystem\\Models\\Items\\DVD.cs",
               "ToolTip": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Models\\Items\\DVD.cs",
               "RelativeToolTip": "LibraryManagementSystem\\Models\\Items\\DVD.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAABJAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-22T18:42:27.018Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "Book.cs",
               "DocumentMoniker": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Models\\Items\\Book.cs",
               "RelativeDocumentMoniker": "LibraryManagementSystem\\Models\\Items\\Book.cs",
               "ToolTip": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Models\\Items\\Book.cs",
               "RelativeToolTip": "LibraryManagementSystem\\Models\\Items\\Book.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAvwBAAAAAjAAAA",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAnwBMAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-22T18:41:57.63Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "IBorrowable.cs",
               "DocumentMoniker": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Models\\Interfaces\\IBorrowable.cs",
               "RelativeDocumentMoniker": "LibraryManagementSystem\\Models\\Interfaces\\IBorrowable.cs",
               "ToolTip": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Models\\Interfaces\\IBorrowable.cs",
               "RelativeToolTip": "LibraryManagementSystem\\Models\\Interfaces\\IBorrowable.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAoAAAAvAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwA4AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-22T18:41:47.964Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "IUser.cs",
-              "DocumentMoniker": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Models\\Interfaces\\IUser.cs",
-              "RelativeDocumentMoniker": "LibraryManagementSystem\\Models\\Interfaces\\IUser.cs",
-              "ToolTip": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Models\\Interfaces\\IUser.cs",
-              "RelativeToolTip": "LibraryManagementSystem\\Models\\Interfaces\\IUser.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwA0AAAAnAAAA",
+              "DocumentIndex": 17,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Models\\Users\\User.cs",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\Models\\Users\\User.cs",
+              "ToolTip": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Models\\Users\\User.cs",
+              "RelativeToolTip": "LibraryManagementSystem\\Models\\Users\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAkAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-22T18:28:06.958Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Admin.cs",
-              "DocumentMoniker": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Models\\Users\\Admin.cs",
-              "RelativeDocumentMoniker": "LibraryManagementSystem\\Models\\Users\\Admin.cs",
-              "ToolTip": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Models\\Users\\Admin.cs",
-              "RelativeToolTip": "LibraryManagementSystem\\Models\\Users\\Admin.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAASwBsAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T18:27:41.952Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 2,
               "Title": "UsersManagement.cs",
               "DocumentMoniker": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\DatabaseManager\\UsersManagement.cs",
               "RelativeDocumentMoniker": "LibraryManagementSystem\\DatabaseManager\\UsersManagement.cs",
               "ToolTip": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\DatabaseManager\\UsersManagement.cs",
               "RelativeToolTip": "LibraryManagementSystem\\DatabaseManager\\UsersManagement.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAYwDMAAAAPAAAA",
+              "ViewState": "AQIAADgAAAAAAAAAAAAwwEYAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T18:27:24.337Z"
+              "WhenOpened": "2024-04-22T18:27:24.337Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -224,67 +258,71 @@
               "RelativeDocumentMoniker": "LibraryManagementSystem\\MauiProgram.cs",
               "ToolTip": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\MauiProgram.cs",
               "RelativeToolTip": "LibraryManagementSystem\\MauiProgram.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwBcAAABIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T18:27:17.634Z"
+              "WhenOpened": "2024-04-22T18:27:17.634Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "Checkout.razor",
               "DocumentMoniker": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Components\\Pages\\Checkout.razor",
               "RelativeDocumentMoniker": "LibraryManagementSystem\\Components\\Pages\\Checkout.razor",
               "ToolTip": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Components\\Pages\\Checkout.razor",
               "RelativeToolTip": "LibraryManagementSystem\\Components\\Pages\\Checkout.razor",
-              "ViewState": "AQIAADgAAAAAAAAAAAAQwDgAAAALAAAA",
+              "ViewState": "AQIAADUAAAAAAAAAAAAAAEEAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-22T18:13:40.113Z"
+              "WhenOpened": "2024-04-22T18:13:40.113Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 1,
               "Title": "AddPerson.razor",
               "DocumentMoniker": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Components\\Pages\\AddPerson.razor",
               "RelativeDocumentMoniker": "LibraryManagementSystem\\Components\\Pages\\AddPerson.razor",
               "ToolTip": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Components\\Pages\\AddPerson.razor",
               "RelativeToolTip": "LibraryManagementSystem\\Components\\Pages\\AddPerson.razor",
-              "ViewState": "AQIAAKIAAAAAAAAAAAAuwLgAAAARAAAA",
+              "ViewState": "AQIAAFQAAAAAAAAAAAAAAGEAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-22T17:59:52.095Z"
+              "WhenOpened": "2024-04-22T17:59:52.095Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Home.razor",
-              "DocumentMoniker": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Components\\Pages\\Home.razor",
-              "RelativeDocumentMoniker": "LibraryManagementSystem\\Components\\Pages\\Home.razor",
-              "ToolTip": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Components\\Pages\\Home.razor",
-              "RelativeToolTip": "LibraryManagementSystem\\Components\\Pages\\Home.razor",
-              "ViewState": "AQIAAOYAAAAAAAAAAAAQwOsAAABEAAAA",
+              "DocumentIndex": 3,
+              "Title": "ItemsManagement.razor",
+              "DocumentMoniker": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Components\\Pages\\ItemsManagement.razor",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\Components\\Pages\\ItemsManagement.razor",
+              "ToolTip": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Components\\Pages\\ItemsManagement.razor",
+              "RelativeToolTip": "LibraryManagementSystem\\Components\\Pages\\ItemsManagement.razor",
+              "ViewState": "AQIAAAwBAAAAAAAAAAAAAFIAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-22T17:32:55.29Z"
+              "WhenOpened": "2024-04-22T17:32:55.29Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 10,
               "Title": "Owner.cs",
               "DocumentMoniker": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Models\\Users\\Owner.cs",
               "RelativeDocumentMoniker": "LibraryManagementSystem\\Models\\Users\\Owner.cs",
               "ToolTip": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Models\\Users\\Owner.cs",
               "RelativeToolTip": "LibraryManagementSystem\\Models\\Users\\Owner.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAFAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAQAAACPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-22T17:39:06.469Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Librarian.cs",
               "DocumentMoniker": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Models\\Users\\Librarian.cs",
               "RelativeDocumentMoniker": "LibraryManagementSystem\\Models\\Users\\Librarian.cs",
               "ToolTip": "D:\\oop2\\LibraryManagementSystem\\LibraryManagementSystem\\Models\\Users\\Librarian.cs",
               "RelativeToolTip": "LibraryManagementSystem\\Models\\Users\\Librarian.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAACVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-22T17:39:03.218Z"
             }

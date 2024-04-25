@@ -1101,3 +1101,4 @@ D:\oop2\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\net8.0-android
 D:\oop2\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\net8.0-android\stamp\_GenerateJavaStubs.stamp
 D:\oop2\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\net8.0-android\stamp\_GeneratePackageManagerJava.stamp
 D:\oop2\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\net8.0-android\stamp\_ResolveLibraryProjectImports.stamp
+D:\oop2\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\net8.0-android\LibraryManagementSystem.sourcelink.json

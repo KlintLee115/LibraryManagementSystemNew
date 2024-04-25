@@ -328,3 +328,4 @@ D:\oop2\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\net8.0-maccata
 D:\oop2\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\LibraryManagementSystem.pdb
 D:\oop2\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\LibraryManagementSystem.genruntimeconfig.cache
 D:\oop2\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\ref\LibraryManagementSystem.dll
+D:\oop2\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\LibraryManagementSystem.sourcelink.json

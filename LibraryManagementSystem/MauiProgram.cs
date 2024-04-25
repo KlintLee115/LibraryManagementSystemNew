@@ -1,4 +1,5 @@
 ﻿using LibraryManagementSystem.DatabaseManager;
+using LibraryManagementSystem.Models.Users;
 using Microsoft.Extensions.Logging;
 using Npgsql;
 
@@ -10,6 +11,7 @@ namespace LibraryManagementSystem
         private static readonly string connectionString = "Host=localhost;Port=5432;Database=library;Username=postgres;Password=password;";
 
         public static readonly NpgsqlConnection connection = new(connectionString);
+        public static User? currUser;
 
         static MauiProgram()
         {

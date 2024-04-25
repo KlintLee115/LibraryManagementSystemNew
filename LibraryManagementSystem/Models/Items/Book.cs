@@ -17,7 +17,7 @@ namespace LibraryManagementSystem.Models.Items
         public string Author { get; } = author;
         public DateTime? BorrowDate { get; set; }
         public DateTime? ReturnDate { get; set; }
-        public IUser? Borrower { get; set; }
+        public User? Borrower { get; set; }
         public bool IsAvailable { get; set; }
         public double CalculateLateFees(DateTime todayDate)
         {

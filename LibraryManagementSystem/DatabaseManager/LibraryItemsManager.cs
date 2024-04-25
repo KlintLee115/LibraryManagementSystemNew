@@ -16,41 +16,73 @@ namespace LibraryManagementSystem.DatabaseManager
 
         /*
 
-        Get a library item based on item id
+        Helper function to get a library item based on item id and itemlist
 
         @param - id (int?) - item id
+        @param - itemList (List<T>) - the list of items of which class implements ILibraryItem, the classes are Book, Game, and DvD
 
         @return - the library item
         */
 
-        private static T GetItem<T>(int? id, IEnumerable<T> itemList) where T : ILibraryItem
+        private static ILibraryItem? GetItem<T>(int? id, List<T> itemList) where T : ILibraryItem
         {
             if (!id.HasValue) throw new InputNotNumberError("Item ID");
-            T item = itemList.FirstOrDefault(item => item.Id == id.Value) ?? throw new ItemDoesntExistError("Item");
-            return item;
+            return itemList.FirstOrDefault(item => item.Id == id.Value);
         }
 
-        public static Book GetBook(int? id) => GetItem(id, Books);
-        public static Game GetGame(int? id) => GetItem(id, Games);
-        public static DVD GetDVD(int? id) => GetItem(id, Dvds);
 
-        public static double HandleReturn(int itemId, DateTime todayDate)
+        /*
+       * Get an item based on item id. Return null if there's no item
+       * @param - id (int?) - the item id
+       
+       * @return - the library item, or null if there's none
+       */
+
+        public static ILibraryItem? GetItem(int? id)
+        {
+            if (!id.HasValue) throw new InputNotNumberError("Item ID");
+            Book? book = GetBook(id.Value);
+            if (book != null) return book;
+
+            DVD? dvd = GetDVD(id.Value);
+            if (dvd != null) return dvd;
+
+            Game? game = GetGame(id.Value);
+            if (game != null) return game;
+
+            return null;
+        }
+
+        public static Book? GetBook(int? id) => (Book?)GetItem(id, Books);
+        public static Game? GetGame(int? id) => (Game?)GetItem(id, Games);
+        public static DVD? GetDVD(int? id) => (DVD?)GetItem(id, Dvds);
+
+        /*
+       * Handle the return process of an item. If there is penalty, return the penalty amount, otherwise return 0
+       * @param - item (IBorrowable) - the item to be returned
+       * @param - todayDate (DateTime) - today's date
+       
+       * @return - penalty fees
+       */
+
+        public static double HandleReturn(IBorrowable item, DateTime todayDate)
         {
             try
             {
-                Book? book = Books.FirstOrDefault(item => item.Id == itemId);
-                if (book != null) return book.CalculateLateFees(todayDate);
-
-                DVD? dvd = Dvds.FirstOrDefault(item => item.Id == itemId);
-                if (dvd != null) return dvd.CalculateLateFees(todayDate);
-
-                throw new ItemDoesntExistError("Item");
+                if (item is Book book) return book.CalculateLateFees(todayDate);
+                if (item is DVD dvd) return dvd.CalculateLateFees(todayDate);
+                return 0;
             }
             catch (Exception)
             {
                 throw;
             }
         }
+
+        /*
+       * Get all dvds
+       * @return - all dvds
+       */
 
         public static async Task<List<DVD>> SelectAllDvDs()
         {
@@ -75,7 +107,10 @@ namespace LibraryManagementSystem.DatabaseManager
                         string director = reader.GetString(reader.GetOrdinal("director"));
                         bool borrowed = reader.GetBoolean(reader.GetOrdinal("borrowed"));
 
-                        DVD dvd = new(id, title, director);
+                        DVD dvd = new(id, title, director)
+                        {
+                            IsAvailable = true
+                        };
 
                         if (borrowed)
                         {
@@ -84,12 +119,14 @@ namespace LibraryManagementSystem.DatabaseManager
                             int userid = reader.GetInt32(reader.GetOrdinal("userid"));
                             string firstName = reader.GetString(reader.GetOrdinal("firstname"));
                             string lastName = reader.GetString(reader.GetOrdinal("lastname"));
+                            string email = reader.GetString(reader.GetOrdinal("email"));
+                            string password = reader.GetString(reader.GetOrdinal("password"));
                             int userType = reader.GetInt32(reader.GetOrdinal("usertype"));
-                            IUser user = userType switch
+                            User user = userType switch
                             {
-                                1 => new Owner(userid, firstName, lastName),
-                                2 => new Librarian(userid, firstName, lastName),
-                                3 => new Patron(userid, firstName, lastName),
+                                1 => new Owner(userid, firstName, lastName, email, password),
+                                2 => new Librarian(userid, firstName, lastName, email, password),
+                                3 => new Patron(userid, firstName, lastName, email, password),
                                 _ => throw new NotImplementedException()
                             };
 
@@ -124,8 +161,6 @@ namespace LibraryManagementSystem.DatabaseManager
                 using var reader = await command.ExecuteReaderAsync();
                 while (await reader.ReadAsync())
                 {
-                    Console.WriteLine("OK for game");
-
                     int id = reader.GetInt32(reader.GetOrdinal("itemid"));
                     string name = reader.GetString(reader.GetOrdinal("name"));
 
@@ -158,7 +193,10 @@ namespace LibraryManagementSystem.DatabaseManager
                     string author = reader.GetString(reader.GetOrdinal("author"));
                     bool borrowed = reader.GetBoolean(reader.GetOrdinal("borrowed"));
 
-                    Book book = new(id, title, author);
+                    Book book = new(id, title, author)
+                    {
+                        IsAvailable = true
+                    };
 
                     if (borrowed)
                     {
@@ -167,12 +205,14 @@ namespace LibraryManagementSystem.DatabaseManager
                         int userid = reader.GetInt32(reader.GetOrdinal("userid"));
                         string firstName = reader.GetString(reader.GetOrdinal("firstname"));
                         string lastName = reader.GetString(reader.GetOrdinal("lastname"));
+                        string email = reader.GetString(reader.GetOrdinal("email"));
+                        string password = reader.GetString(reader.GetOrdinal("password"));
                         int userType = reader.GetInt32(reader.GetOrdinal("usertype"));
-                        IUser user = userType switch
+                        User user = userType switch
                         {
-                            1 => new Owner(userid, firstName, lastName),
-                            2 => new Librarian(userid, firstName, lastName),
-                            3 => new Patron(userid, firstName, lastName),
+                            1 => new Owner(userid, firstName, lastName, email, password),
+                            2 => new Librarian(userid, firstName, lastName, email, password),
+                            3 => new Patron(userid, firstName, lastName, email, password),
                             _ => throw new NotImplementedException()
                         };
 
@@ -188,16 +228,6 @@ namespace LibraryManagementSystem.DatabaseManager
 
             return productList;
 
-        }
-
-        public static async Task Return(int itemId)
-        {
-
-            string query = $"UPDATE \"Items\" SET borrowed=false, userid=null, borrowdate=null, returndate=null WHERE id={itemId}";
-
-            using var command = new NpgsqlCommand(query, MauiProgram.connection);
-
-            using var reader = await command.ExecuteReaderAsync();
         }
 
         public static void AddGame(Game game) => Games.Add(game);

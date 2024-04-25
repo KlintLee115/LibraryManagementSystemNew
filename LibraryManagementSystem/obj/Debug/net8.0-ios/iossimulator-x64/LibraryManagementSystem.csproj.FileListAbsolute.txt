@@ -340,3 +340,5 @@ D:\oop2\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\net8.0-ios\ios
 D:\oop2\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\net8.0-ios\iossimulator-x64\LibraryManagementSystem.pdb
 D:\oop2\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\net8.0-ios\iossimulator-x64\LibraryManagementSystem.genruntimeconfig.cache
 D:\oop2\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\net8.0-ios\iossimulator-x64\ref\LibraryManagementSystem.dll
+D:\oop2\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\net8.0-ios\iossimulator-x64\build-signature\signature
+D:\oop2\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\net8.0-ios\iossimulator-x64\LibraryManagementSystem.sourcelink.json
