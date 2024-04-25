@@ -1,6 +1,9 @@
 # Introduction
 Welcome to the GitHub repository for our Library Management System, a robust application designed using the .NET MAUI framework with C# as the programming language. This system is tailored to streamline the management of library operations, enhancing both the librarian and member experiences by automating routine tasks.
 
+# Video
+https://drive.google.com/file/d/1J4wJFGWzHHanWXDH58GoT4kxd4WlHTKr/view?usp=drive_link
+
 # Key Features
 - Borrow and Return Items: Our system simplifies the process of borrowing and returning books and other library materials. Members can easily check out items using their library card, and return them by the due date. The system automatically updates the inventory and member records accordingly.
 - CRUD Operations on Library Items
